@@ -1,15 +1,13 @@
 {
   "name": "usps-zip-codes",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Retrieve USPS ZIP Codes and make it easy to fill out city/state in forms",
   "main": "getZips.js",
   "dependencies": {
     "bluebird": "^3.5.0",
-    "cheerio": "^0.22.0",
-    "cheerio-tableparser": "^1.0.1",
-    "form-data": "^2.1.4",
     "jsonfile": "^3.0.0",
-    "node-fetch": "^1.6.3"
+    "node-fetch": "^1.6.3",
+    "node-xml-lite": "0.0.7"
   },
   "devDependencies": {},
   "scripts": {
@@ -22,6 +20,10 @@
     "postal",
     "zipcodes"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pseudosavant/USPSZIPCodes.git"
+  },
   "author": "Paul Ellis, pseudosavant.com",
   "license": "MIT"
 }
