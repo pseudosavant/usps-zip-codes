@@ -6,6 +6,7 @@ The `ZIPCodes.json` file is <300k gzipped but is about 1.7MB uncompressed. It ca
 The `ZIPCodes.json` file can be used directly (courtesy of [statically.io](https://statically.io/)) with CORS here: https://cdn.statically.io/gh/pseudosavant/USPSZIPCodes/9c75e95cbddd241bd8761f29a91d7d24fe66f086/dist/ZIPCodes.json
 
 Example client-side usage here: https://usps-zipcodes-demo.glitch.me/
+Source view: https://glitch.com/edit/#!/usps-zipcodes-demo?path=script.js
 
 © 2017 Paul Ellis, pseudosavant.com
 
