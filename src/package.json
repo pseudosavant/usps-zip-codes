@@ -6,7 +6,7 @@
   "dependencies": {
     "bluebird": "^3.5.0",
     "jsonfile": "^3.0.0",
-    "node-fetch": "^1.6.3",
+    "node-fetch": "^2.6.1",
     "node-xml-lite": "0.0.7"
   },
   "devDependencies": {},
