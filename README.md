@@ -1,14 +1,26 @@
-# USPS ZIP Codes
-Retrieve USPS ZIP Codes and make it easy to fill out city/state in forms. This currently just has a script for retrieving all of the USPS ZIP Codes from usps.com. That file can be found in `dist\ZIPCodes.json`.
+# USPS ZIP Codes Lookup
 
-The `ZIPCodes.json` file is <300k gzipped but is about 1.7MB uncompressed. It can be used on the server either as a json file or database, but it can also be used directly in the browser without any backend (see example below).
+Easily retrieve USPS ZIP Codes to auto-fill city/state in forms without the hassle.
 
-The `ZIPCodes.json` file can be used directly (courtesy of [statically.io](https://statically.io/)) with CORS here: https://cdn.statically.io/gh/pseudosavant/USPSZIPCodes/9c75e95cbddd241bd8761f29a91d7d24fe66f086/dist/ZIPCodes.json
+## Motivation
 
-Example client-side usage here: https://usps-zipcodes-demo.glitch.me/
+Ever got tired of filling in the City and State fields every time a form asked for a ZIP code? Although the USPS readily provides data over an API, it's challenging to find a valid and comprehensive list of all USPS codes. This project aims to bridge that gap by providing an up-to-date and easily accessible JSON file containing all USPS ZIP codes and their associated City and State.
 
-Source view: https://glitch.com/edit/#!/usps-zipcodes-demo?path=script.js
+## Features
 
-© 2017 Paul Ellis, pseudosavant.com
+- **Comprehensive JSON Data**: Find every USPS ZIP code alongside its City and State in our `dist/ZIPCodes.json` file.
+- **Easy Updates**: Included script (`src/fetchZIPs.ts`) to fetch an updated list using the USPS API. Defaults to a subset of ZIP Codes (90210-90310) but all ZIP codes can be specified with CLI arguments (`deno run --allow-env --allow-net --allow-write fetchZIPs.ts 0 99999`).
+- **Lightweight**: The `ZIPCodes.json` file is only <300k  when gzipped (`gzip -v -c ZIPCodes-0-99999.json | wc -c`) or ~1.7MB uncompressed.
+- **Versatile Use Cases**: Use it server-side as a JSON file or a database, or client-side directly in the browser.
 
-License: MIT
+## Quick Links
+
+- **Direct JSON Access** (via [statically.io](https://statically.io/)): [https://cdn.statically.io/gh/pseudosavant/USPSZIPCodes/main/dist/ZIPCodes.json](https://cdn.statically.io/gh/pseudosavant/USPSZIPCodes/main/dist/ZIPCodes.json)
+- **Client-side Usage Demo**: [https://usps-zipcodes-demo.glitch.me/](https://usps-zipcodes-demo.glitch.me/)
+- **Demo Source**: [https://glitch.com/edit/#!/usps-zipcodes-demo?path=script.js](https://glitch.com/edit/#!/usps-zipcodes-demo?path=script.js)
+
+## License
+
+This project is licensed under the [MIT License](https://opensource.org/license/MIT/).
+
+© 2023 Paul Ellis, [pseudosavant.com](http://pseudosavant.com)
