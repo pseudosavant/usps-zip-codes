@@ -1,3 +1,4 @@
+#!/usr/bin/env -S deno run --allow-net
 const fetchZIPCodes = async () => {
   const JSONUrl = 'https://raw.githubusercontent.com/pseudosavant/usps-zip-codes/main/dist/ZIPCodes-0-99999.json';
   const res = await fetch(JSONUrl);
@@ -32,7 +33,8 @@ const main = async () => {
     const requestedZIP = getZIPFromUrl(req.url);
     const ZIPData = ZIPCodes[requestedZIP];
     const headers = {
-      'context-type': 'application/json'
+      'context-type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
     }
 
     if (!isUndefined(requestedZIP) && !isUndefined(ZIPData)) {
