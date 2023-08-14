@@ -1,5 +1,4 @@
 #!/usr/bin/env -S deno run --allow-env --allow-net --allow-write
-// Copyright 2018-2021 the Deno authors. All rights reserved. MIT license.
 import { parse } from "https://deno.land/x/xml@2.1.1/mod.ts";
 
 const USPSUserID = Deno.env.get("USPSUserID") || ''; // You must supply your own. Sign up for free here: https://www.usps.com/business/web-tools-apis/
