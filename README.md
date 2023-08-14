@@ -16,6 +16,7 @@ Ever got tired of filling in the City and State fields every time a form asked f
 ## Quick Links
 
 - **Direct JSON Access** (via [statically.io](https://statically.io/)): [https://cdn.statically.io/gh/pseudosavant/USPSZIPCodes/main/dist/ZIPCodes.json](https://cdn.statically.io/gh/pseudosavant/USPSZIPCodes/main/dist/ZIPCodes.json)
+- **Query from ZIP API**: `https://usps-zip-codes.deno.dev/{ZIPCODE}` - [90210 Example](https://usps-zip-codes.deno.dev/90210)
 - **Client-side Usage Demo**: [https://usps-zipcodes-demo.glitch.me/](https://usps-zipcodes-demo.glitch.me/)
 - **Demo Source**: [https://glitch.com/edit/#!/usps-zipcodes-demo?path=script.js](https://glitch.com/edit/#!/usps-zipcodes-demo?path=script.js)
 
