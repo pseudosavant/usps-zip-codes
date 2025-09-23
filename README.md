@@ -9,18 +9,34 @@ Ever got tired of filling in the City and State fields every time a form asked f
 ## Features
 
 - **Comprehensive JSON Data**: Find every USPS ZIP code alongside its City and State in our `dist/ZIPCodes.json` file.
-- **Easy Updates**: Included script (`src/fetchZIPs.ts`) to fetch an updated list using the USPS API. Defaults to a subset of ZIP Codes (90210-90310) but all ZIP codes can be specified with CLI arguments (`deno run --allow-env --allow-net --allow-write fetchZIPs.ts 0 99999`).
-- **Lightweight**: The `ZIPCodes.json` file is only <300k  when gzipped (`gzip -v -c ZIPCodes-0-99999.json | wc -c`) or ~1.7MB uncompressed.
+- **Lightweight**: The `ZIPCodes.json` file is only <300k  when gzipped (`gzip -v -c ZIPCodes.json | wc -c`) or ~1.5MB uncompressed.
 - **Versatile Use Cases**: Use it server-side as a JSON file or a database, or client-side directly in the browser.
+
+### Generate JSON from USPS Excel/CSV with UV (PEP 723)
+
+USPS now publishes an official Excel (https://postalpro.usps.com/ZIP_Locale_Detail) with ZIP → City/State and more. You can transform that file directly into the compact JSON mapping using the included UV inline-metadata Python script.
+
+- Script: `src/process-usps-zipcodes.py`
+- Default input: `ZIP_Locale_Detail.xls`
+- Default output: `zipcodes-YYYY-MM-DD.json` (written to the current directory)
+
+Run:
+
+```cmd
+uv run src\process-usps-zipcodes.py --in ZIP_Locale_Detail.xls --pretty
+```
+
+Notes:
+
+- No manual installs needed; `uv` reads PEP 723 metadata and installs `pandas`, `openpyxl`, and `xlrd` as needed.
+- The script auto-detects ZIP/City/State columns and preserves the original City/State values and casing from the source file.
 
 ## Quick Links
 
 - **Direct JSON Access** (via [statically.io](https://statically.io/)): [https://cdn.statically.io/gh/pseudosavant/USPSZIPCodes/main/dist/ZIPCodes.json](https://cdn.statically.io/gh/pseudosavant/USPSZIPCodes/main/dist/ZIPCodes.json)
-- **Client-side Usage Demo**: [https://usps-zipcodes-demo.glitch.me/](https://usps-zipcodes-demo.glitch.me/)
-- **Demo Source**: [https://glitch.com/edit/#!/usps-zipcodes-demo?path=script.js](https://glitch.com/edit/#!/usps-zipcodes-demo?path=script.js)
 
 ## License
 
 This project is licensed under the [MIT License](https://opensource.org/license/MIT/).
 
-© 2023 Paul Ellis, [pseudosavant.com](http://pseudosavant.com)
+© 2025 Paul Ellis, [pseudosavant.com](http://pseudosavant.com)
